@@ -1,0 +1,3 @@
+#!/bin/bash
+PYCODE="code.py"
+python3 "$PYCODE"
