@@ -5,7 +5,7 @@ def print_matrix_integer(matrix=[[]]):
         return None
     for mat in matrix:
         if len(mat) == 0:
-            print ()
+            print()
         for number in range(len(mat)):
             print("{:d}".format(mat[number]),
                   end="\n" if number is len(mat) - 1 else " ")
