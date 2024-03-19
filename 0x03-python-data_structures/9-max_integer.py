@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 def max_integer(my_list=[]):
-    newList = []
-    if my_list:
-        my_list.sort(reverse=True)
-        return(my_list[0])
-    return (None)
+    if len(my_list) < 1:
+        return None
+    coList = my_list.copy()
+    coList.sort()
+    return coList[-1]
