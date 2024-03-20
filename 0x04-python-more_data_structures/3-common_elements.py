@@ -1,4 +1,5 @@
 #!/usr/bin/python3
 
 def common_elements(set_1, set_2):
-    comSet = set_1.intersection(set_2) ; return comSet
+    comSet = set_1.intersection(set_2)
+    return comSet
