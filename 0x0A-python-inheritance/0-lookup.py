@@ -2,7 +2,5 @@
 """Defines Lookup Function."""
 
 def lookup(obj):
-	"""
-	Returns a list of attributes and methods associated with the given object.
-	"""
+	"""Return a list of attributes and methods of a given object."""
 	return (dir(obj))
