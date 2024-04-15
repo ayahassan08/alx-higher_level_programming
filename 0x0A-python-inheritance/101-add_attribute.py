@@ -7,7 +7,7 @@ def add_attribute(obj, att, value):
 	Args:
 		obj (any): The object to add an attribute to.
 		att (str): The name of the attribute to add to obj.
-		value (any): The value of att.
+		value (any): The value of attribute.
 	Raises:
 		TypeError: If the attribute cannot be added.
 	"""
