@@ -6,10 +6,7 @@ representing the Pascals triangle of n
 
 
 def pascal_triangle(n):
-    '''
-    returns a list of lists of integers 
-    representing the Pascals triangle of n
-    '''
+    '''Returns lists of integers rep. the Pascals triangle of n'''
     if n <= 0:
         return []
     triangles = [[1]]
