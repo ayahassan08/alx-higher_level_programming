@@ -3,24 +3,17 @@
 
 
 class Student:
-	'''Represents a student'''
+    """Represents a student"""
 
-	def __init__(self, first_name, last_name, age):
-		'''Defines a student'''
-		self.first_name = first_name
-		self.last_name = last_name
-		self.age = age
+    def __init__(self, first_name, last_name, age):
+        '''Defines a new Student.'''
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-	def to_json(self, attrs=None):
-     '''Retrieves a dictionary representation of a Student instance'''
-		try:
-			for attr in attrs:
-				if type (attr) is not str:
-					return self._dict_
-		except Exception:
-			return self._dict_
-		my_dict = dict()
-		for key, value in self._dict__.items():
-			if key in attrs:
-				my_dict[key] = value
-		return my_dict
+    def to_json(self, attrs=None):
+        '''Get a dict. representation of the Student.'''
+        if (type(attrs) == list and
+                all(type(element) == str for element in attrs)):
+            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
+        return self.__dict__
