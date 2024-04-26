@@ -1,97 +1,51 @@
-#!/bin/usr/python3
-"""
-Rectangle module
-"""
+#!/usr/bin/python3
+'''Writes the class Rectangle that inherits from Base'''
 from models.base import Base
 
 
 class Rectangle(Base):
-    """
-    Rectangle class
-    """
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize a new Rectangle.
-        """
-        super().__init__(id)
+	'''A Rectangle class'''
 
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+	def __init__(self, width, height, x=0, y=0, id=None):
+		'''A class constructor'''
+		super().__init__(id)
+		self.width = width
+		self.height = height
+		self.x = x
+		self.y = y
 
-    @property
-    def width(self):
-        """
-        width getter
-        """
-        return self.__width
+	def width(self):
+		'''Width of rectangle'''
+		return self.__width
 
-    @width.setter
-    def width(self, value):
-        """
-        Width setter
-        """
-        # added a check for when value is a bool, if the check is removed
-        # the unittest for it will fail
-        if not isinstance(value, int) or isinstance(value, bool):
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
+	def width(self, value):
+		'''Width setter'''
+		self.validate_integer("width", value, False)
+		self.__width = value
 
-    @property
-    def height(self):
-        """
-        height getter
-        """
-        return self.__height
+	def height(self):
+		'''Height of rectangle'''
+		return self.__height
 
-    @height.setter
-    def height(self, value):
-        """
-        height setter
-        """
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        if value <= 0:
-            raise ValueError("height must be > 0")
+	def height(self, value):
+		'''Height setter'''
+		self.validate_integer("height", value, False)
+		self.__height = value
 
-        self.__height = value
+	def x(self):
+		'''x of rectangle'''
+		return self.__x
 
-    @property
-    def x(self):
-        """
-        x getter
-        """
-        return self.__x
+	def x(self, value):
+		'''x setter'''
+		self.validate_integer("x", value)
+		self.__x = value
 
-    @x.setter
-    def x(self, value):
-        """
-        x setter
-        """
-        # added a check for when value is a bool, if the check is removed
-        # the unittest for it will fail
-        if not isinstance(value, int) or isinstance(value, bool):
-            raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        self.__x = value
+	def y(self):
+		'''y of rectangle'''
+		return self.__y
 
-    @property
-    def y(self):
-        """
-        y getter
-        """
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        """
-        y setter
-        """
-        if not isinstance(value, int):
-            raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        self.__y = value
+	def y(self, value):
+		'''y setter'''
+		self.validate_integer("y", value)
+		self.__y = value
