@@ -84,7 +84,7 @@ class Rectangle(Base):
                    self.height)
 
     def __update(self, id=None, width=None, height=None, x=None, y=None):
-        '''Assigns an argument to each attribute'''
+        '''A method'''
         if id is not None:
             self.id = id
         if width is not None:
@@ -95,3 +95,10 @@ class Rectangle(Base):
             self.x = x
         if y is not None:
             self.y = y
+
+    def update(self, *args, **kwargs):
+        '''Assigns an argument to each attribute'''
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
